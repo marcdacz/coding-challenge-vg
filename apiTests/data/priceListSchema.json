@@ -1,0 +1,388 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "readOnly": false,
+    "writeOnly": false,
+    "uniqueItems": false,
+    "minItems": 0,
+    "minContains": 1,
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "type": "object",
+        "readOnly": false,
+        "writeOnly": false,
+        "minProperties": 0,
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+            {
+                "portId": "8202",
+                "navPriceArray": [
+                    {
+                        "measureType": {
+                            "measureDesc": "Net Asset Value",
+                            "measureCode": "NAV"
+                        },
+                        "price": 34.989,
+                        "asOfDate": "2020-03-12T00:00:00-04:00",
+                        "pricePeriodType": {
+                            "pricePeriodDesc": "Daily Price",
+                            "pricePeriodCode": "DAILY"
+                        },
+                        "priceStatusType": {
+                            "priceStatusDesc": "Final Price",
+                            "priceStatusCode": "FINAL"
+                        },
+                        "amountChange": -3.2692,
+                        "currency": {
+                            "currencySymbol": "$",
+                            "currencyCode": "AUD",
+                            "currencyLocation": "L"
+                        },
+                        "isFinal": true,
+                        "final": true,
+                        "yield": null,
+                        "percentChange": -8.55
+                    }
+                ]
+            }
+        ],
+        "additionalProperties": true,
+        "required": ["portId", "navPriceArray"],
+        "properties": {
+            "portId": {
+                "$id": "#/items/properties/portId",
+                "type": "string",
+                "readOnly": false,
+                "writeOnly": false,
+                "minLength": 0,
+                "title": "The Portid Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["8202"]
+            },
+            "navPriceArray": {
+                "$id": "#/items/properties/navPriceArray",
+                "type": "array",
+                "readOnly": false,
+                "writeOnly": false,
+                "uniqueItems": false,
+                "minItems": 0,
+                "minContains": 1,
+                "title": "The Navpricearray Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "additionalItems": true,
+                "items": {
+                    "$id": "#/items/properties/navPriceArray/items",
+                    "type": "object",
+                    "readOnly": false,
+                    "writeOnly": false,
+                    "minProperties": 0,
+                    "title": "The Items Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "isFinal": true,
+                            "final": true,
+                            "percentChange": -8.55,
+                            "yield": null,
+                            "measureType": {
+                                "measureCode": "NAV",
+                                "measureDesc": "Net Asset Value"
+                            },
+                            "asOfDate": "2020-03-12T00:00:00-04:00",
+                            "price": 34.989,
+                            "pricePeriodType": {
+                                "pricePeriodCode": "DAILY",
+                                "pricePeriodDesc": "Daily Price"
+                            },
+                            "priceStatusType": {
+                                "priceStatusCode": "FINAL",
+                                "priceStatusDesc": "Final Price"
+                            },
+                            "amountChange": -3.2692,
+                            "currency": {
+                                "currencyLocation": "L",
+                                "currencySymbol": "$",
+                                "currencyCode": "AUD"
+                            }
+                        }
+                    ],
+                    "additionalProperties": true,
+                    "required": [
+                        "amountChange",
+                        "asOfDate",
+                        "currency",
+                        "isFinal",
+                        "measureType",
+                        "percentChange",
+                        "price",
+                        "pricePeriodType",
+                        "priceStatusType",
+                        "yield",
+                        "final"
+                    ],
+                    "properties": {
+                        "amountChange": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/amountChange",
+                            "type": "number",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Amountchange Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [-3.2692]
+                        },
+                        "asOfDate": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/asOfDate",
+                            "type": "string",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "minLength": 0,
+                            "title": "The Asofdate Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": ["2020-03-12T00:00:00-04:00"]
+                        },
+                        "currency": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/currency",
+                            "type": "object",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "minProperties": 0,
+                            "title": "The Currency Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "currencyCode": "AUD",
+                                    "currencyLocation": "L",
+                                    "currencySymbol": "$"
+                                }
+                            ],
+                            "additionalProperties": true,
+                            "required": ["currencyCode", "currencyLocation", "currencySymbol"],
+                            "properties": {
+                                "currencyCode": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/currency/properties/currencyCode",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Currencycode Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["AUD"]
+                                },
+                                "currencyLocation": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/currency/properties/currencyLocation",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Currencylocation Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["L"]
+                                },
+                                "currencySymbol": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/currency/properties/currencySymbol",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Currencysymbol Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["$"]
+                                }
+                            }
+                        },
+                        "isFinal": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/isFinal",
+                            "type": "boolean",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Isfinal Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [true]
+                        },
+                        "measureType": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/measureType",
+                            "type": "object",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "minProperties": 0,
+                            "title": "The Measuretype Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "measureCode": "NAV",
+                                    "measureDesc": "Net Asset Value"
+                                }
+                            ],
+                            "additionalProperties": true,
+                            "required": ["measureCode", "measureDesc"],
+                            "properties": {
+                                "measureCode": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/measureType/properties/measureCode",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Measurecode Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["NAV"]
+                                },
+                                "measureDesc": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/measureType/properties/measureDesc",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Measuredesc Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["Net Asset Value"]
+                                }
+                            }
+                        },
+                        "percentChange": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/percentChange",
+                            "type": "number",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Percentchange Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [-8.55]
+                        },
+                        "price": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/price",
+                            "type": "number",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Price Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [34.989]
+                        },
+                        "pricePeriodType": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/pricePeriodType",
+                            "type": "object",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "minProperties": 0,
+                            "title": "The Priceperiodtype Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "pricePeriodDesc": "Daily Price",
+                                    "pricePeriodCode": "DAILY"
+                                }
+                            ],
+                            "additionalProperties": true,
+                            "required": ["pricePeriodCode", "pricePeriodDesc"],
+                            "properties": {
+                                "pricePeriodCode": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/pricePeriodType/properties/pricePeriodCode",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Priceperiodcode Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["DAILY"]
+                                },
+                                "pricePeriodDesc": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/pricePeriodType/properties/pricePeriodDesc",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Priceperioddesc Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["Daily Price"]
+                                }
+                            }
+                        },
+                        "priceStatusType": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/priceStatusType",
+                            "type": "object",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "minProperties": 0,
+                            "title": "The Pricestatustype Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "priceStatusCode": "FINAL",
+                                    "priceStatusDesc": "Final Price"
+                                }
+                            ],
+                            "additionalProperties": true,
+                            "required": ["priceStatusCode", "priceStatusDesc"],
+                            "properties": {
+                                "priceStatusCode": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/priceStatusType/properties/priceStatusCode",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Pricestatuscode Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["FINAL"]
+                                },
+                                "priceStatusDesc": {
+                                    "$id": "#/items/properties/navPriceArray/items/properties/priceStatusType/properties/priceStatusDesc",
+                                    "type": "string",
+                                    "readOnly": false,
+                                    "writeOnly": false,
+                                    "minLength": 0,
+                                    "title": "The Pricestatusdesc Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": ["Final Price"]
+                                }
+                            }
+                        },
+                        "yield": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/yield",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Yield Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null,
+                            "examples": [null]
+                        },
+                        "final": {
+                            "$id": "#/items/properties/navPriceArray/items/properties/final",
+                            "type": "boolean",
+                            "readOnly": false,
+                            "writeOnly": false,
+                            "title": "The Final Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [true]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
