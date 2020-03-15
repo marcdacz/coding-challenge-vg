@@ -1,0 +1,24 @@
+{
+    "name": "vg-ui-tests",
+    "version": "1.0.0",
+    "description": "Coding Challenge - UI Tests for Vanguard",
+    "author": "Marc Dacanay",
+    "scripts": {
+        "mocha": "node ./node_modules/mocha/bin/mocha",
+        "test-dev-chrome": "cross-env BROWSER=chromium NODE_ENV=dev mocha --require ./config/setup --recursive --timeout 30000 --reporter mochawesome",
+        "test-dev-firefox": "cross-env BROWSER=firefox NODE_ENV=dev mocha --require ./config/setup --recursive --timeout 30000 --reporter mochawesome",
+        "test-int-chrome": "cross-env BROWSER=chromium NODE_ENV=int mocha --require ./config/setup --recursive --timeout 30000 --reporter mochawesome",
+        "test-int-firefox": "cross-env BROWSER=firefox NODE_ENV=int mocha --require ./config/setup --recursive --timeout 30000 --reporter mochawesome"
+    },
+    "dependencies": {
+        "chai": "^4.2.0",
+        "cross-env": "^7.0.2",
+        "fs-extra": "^8.1.0",
+        "lodash": "^4.17.15",
+        "mocha": "^7.1.0",
+        "mochawesome": "^5.0.0",
+        "playwright": "^0.11.1",
+        "superagent": "^5.2.2",
+        "superagent-jsonp": "^0.2.1"
+    }
+}

@@ -12,12 +12,10 @@
         "chai": "^4.2.0",
         "chai-as-promised": "^7.1.1",
         "chai-json-schema": "^1.5.1",
+        "cross-env": "^7.0.2",
         "mocha": "^7.1.0",
         "mochawesome": "^5.0.0",
         "superagent": "^5.2.2",
         "superagent-jsonp": "^0.2.1"
-    },
-    "devDependencies": {
-        "cross-env": "^7.0.2"
     }
 }

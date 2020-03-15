@@ -10,4 +10,13 @@ Stack:
 -   SuperAgent + JSONP plugin
 -   Mochawesome Reporter
 
-## UI Test Automation
+## [UI Test Automation](/uiTests/README.md)
+
+Stack:
+
+-   NodeJS
+-   Playwright
+-   Mocha
+-   Chai
+-   SuperAgent + JSONP plugin
+-   Mochawesome Reporter

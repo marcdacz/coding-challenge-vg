@@ -106,3 +106,6 @@ dist
 package-lock.json
 
 **/mochawesome-report/
+uiTests/cypress/results/
+*.mp4
+*.png
