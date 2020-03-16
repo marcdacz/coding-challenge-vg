@@ -93,6 +93,13 @@ describe("👀  Validating Product Compare Page", () => {
         const actualProductNames = await page.$$eval(".addFundBox", (e) => e.map((n) => n.innerText));
         expect(actualProductNames.length).to.equal(4);
 
+        const actualFundManagers = await compareProductsMethods.getCompareProductRowData(page, "fundManagerDataPnt");
+        const actualMorningstarCategories = await compareProductsMethods.getCompareProductRowData(
+            page,
+            "morningstarCategoryDataPnt"
+        );
+        const actualProducts = await compareProductsMethods.getCompareProductRowData(page, "productNameDataPnt");
+
         for (let index = 0; index < actualProductNames.length; index++) {
             let expectedProductData = _.find(
                 expectedFundDetails.body.fundDetailsList.fundDetailsList[index].subgroups,
@@ -100,8 +107,18 @@ describe("👀  Validating Product Compare Page", () => {
                     sectionHeader: "Product Facts"
                 }
             );
+
+            // console.log("expectedProductData", expectedProductData);
+
             let expectedProductDataFundName = _.find(expectedProductData.dataPoints, { attribute: "fundName" });
             expect(actualProductNames[index]).to.include(expectedProductDataFundName.value);
+            expect(actualProducts[index]).to.include(expectedProductDataFundName.value);
+
+            let expectedFundManager = _.find(expectedProductData.dataPoints, { attribute: "fundfamily" });
+            expect(actualFundManagers[index]).to.include(expectedFundManager.value);
+
+            let expectedMorningstarCategory = _.find(expectedProductData.dataPoints, { attribute: "category" });
+            expect(actualMorningstarCategories[index]).to.include(expectedMorningstarCategory.value);
         }
 
         await page.screenshot({ path: `screenshots/${browserType}/compareProductsTable.png` });

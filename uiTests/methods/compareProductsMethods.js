@@ -9,6 +9,14 @@ async function getFundDetails(fundId1 = null, fundId2 = null, fundId3 = null, fu
         .use(jsonp);
 }
 
+async function getCompareProductRowData(page, rowHeader) {
+    let rowData = await page.$$eval(`//strong[@id='${rowHeader}']/../../td`, (e) => e.map((n) => n.innerText));
+    let rowDataWithoutHeader = rowData.slice(1);
+    expect(rowDataWithoutHeader.length).to.equal(4);
+    return rowDataWithoutHeader;
+}
+
 module.exports = {
-    getFundDetails
+    getFundDetails,
+    getCompareProductRowData
 };
